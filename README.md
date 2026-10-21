@@ -1,66 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# InfoSec Vault & Auditor
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Ce projet est une application web utilitaire développée sous Laravel. Elle a été conçue spécifiquement dans le cadre de ma candidature chez **Infomaniak (Suisse)** afin de valider mes bases techniques de manière concrète tout en m'alignant sur les valeurs de l'entreprise : la sécurité, la performance et la souveraineté des données.
 
-## About Laravel
+L'outil est autonome, ultra-léger et s'exécute entièrement en mémoire vive.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Fonctionnalités
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. **Générateur de clés de chiffrement (Vault Pass)** : Une route dynamique capable de générer des secrets cryptographiques ou des phrases secrètes mémorisables (Passphrases) basées sur la longueur demandée directement au niveau de l'URL (`/secure/{length}`).
+2. **Auditeur de force de mot de passe (Security Checker)** : Un formulaire sécurisé (`POST`) qui analyse la robustesse d'un mot de passe saisi en direct à l'aide d'un algorithme de découpage textuel natif (vérification de longueur, majuscules, chiffres et caractères spéciaux).
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📐 Choix Architecturaux & Bonnes Pratiques Laravel
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Le code respecte l'architecture officielle du framework :
+* **Séparation des responsabilités (Assets publics)** : Le design a été isolé dans un fichier dédié `public/css/style.css` et lié proprement grâce au helper natif `{{ asset() }}`.
+* **Sécurisation des routes par Expressions Régulières (Regex)** : La route dynamique intègre une contrainte `->where('length', '[0-9]+')` directement dans le fichier de routage afin d'empêcher les injections d'URL.
+* **Aucune dépendance externe** : L'outil s'appuie uniquement sur les classes natives de Laravel (`Illuminate\Support\Str`) et les fonctions de base de PHP, garantissant un démarrage instantané sur n'importe quel environnement (Arch Linux, Ubuntu, etc.) sans modification de fichiers système (`php.ini`).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🚀 Installation locale
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Clonez le dépôt :
+```bash
+git clone https://github.com
+cd NOM_DU_REPO
+```
 
-### Premium Partners
+2. Installez les dépendances via Composer :
+```bash
+composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3. Créez votre fichier d'environnement et générez la clé de l'application :
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Contributing
+4. Lancez le serveur local :
+```bash
+php artisan serve
+```
+L'application est alors accessible à l'adresse : `http://127.0.0.1:8000`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🧠 Évolutions prévues (TODO)
+* [ ] Migrer le dictionnaire statique de passphrases vers une table de données via l'ORM Eloquent dès la validation du module sur les Bases de Données.
+* [ ] Ajouter un script JavaScript natif pour la copie en un clic des clés générées dans le presse-papier.
