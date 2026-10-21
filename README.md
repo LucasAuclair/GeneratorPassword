@@ -27,7 +27,7 @@ Le code respecte l'architecture officielle du framework :
 
 1. Clonez le dépôt :
 ```bash
-git clone https://github.com
+git clone https://github.com/LucasAuclair/GeneratorPassword
 cd NOM_DU_REPO
 ```
 
