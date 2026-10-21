@@ -1,4 +1,5 @@
 # InfoSec Vault & Auditor
+🔗 **Lien de l'application en ligne :** (https://https://generatorpassword.onrender.com/)
 
 Ce projet est une application web utilitaire développée sous Laravel. Elle a été conçue spécifiquement dans le cadre de ma candidature chez **Infomaniak (Suisse)** afin de valider mes bases techniques de manière concrète tout en m'alignant sur les valeurs de l'entreprise : la sécurité, la performance et la souveraineté des données.
 
