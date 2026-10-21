@@ -1,0 +1,135 @@
+body {
+    background: #f5f5f2;
+    color: #292929;
+    font-family: Arial, sans-serif;
+    padding: 32px 16px;
+    margin: 0;
+}
+
+.container {
+    max-width: 620px;
+    margin: 0 auto;
+    display: block;
+}
+
+h1 {
+    color: #292929;
+    border-bottom: 1px solid #d8d8d2;
+    padding-bottom: 12px;
+    margin: 0 0 24px;
+    text-align: center;
+    font-size: 26px;
+}
+
+.section {
+    background: #ffffff;
+    border: 1px solid #deded8;
+    padding: 22px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+h2 {
+    color: #292929;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.hint {
+    color: #6b6b65;
+    font-size: 14px;
+    margin: 0 0 16px;
+}
+
+.label {
+    color: #6b6b65;
+    font-size: 13px;
+}
+
+.output-box {
+    background: #f7f7f4;
+    border: 1px solid #d8d8d2;
+    padding: 13px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #3f6848;
+    word-break: break-all;
+    margin: 10px 0;
+}
+
+.links {
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+.links a {
+    color: #496b8a;
+    margin: 0 12px 0 4px;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 11px;
+    background: #f7f7f4;
+    border: 1px solid #d8d8d2;
+    padding: 13px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #292929;
+}
+
+button {
+    background: #496b8a;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 15px
+}
+
+button:hover {
+    background: #3d5b75;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #f7f7f4;
+    border-left: 4px solid;
+}
+
+.result-title {
+    font-weight: bold;
+}
+
+.success {
+    font-size: 13px;
+    color: #3f6848;
+    margin: 5px 0 0;
+}
+
+ul {
+    padding-left: 20px;
+    margin: 10px 0 0 0;
+    font-size: 13px;
+    color: #6b6b65;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    color: #94a3b8;
+    font-size: 12px;
+    text-align: center;
+}
+
