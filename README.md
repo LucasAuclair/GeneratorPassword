@@ -1,4 +1,4 @@
-# InfoSec Vault & Auditor
+# GeneratePassword
 🔗 **Lien de l'application en ligne :** (https://generatorpassword.onrender.com/)
 
 Ce projet est une application web utilitaire développée sous Laravel.
